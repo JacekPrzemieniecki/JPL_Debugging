@@ -55,5 +55,23 @@ namespace JPL.Debugging
             IsSane(f.y, msg);
             IsSane(f.z, msg);
         }
+
+        [Conditional(symbol)]
+        public static void IsSane(quaternion q)
+        {
+            IsSane(q.value.w);
+            IsSane(q.value.x);
+            IsSane(q.value.y);
+            IsSane(q.value.z);
+        }
+
+        [Conditional(symbol)]
+        public static void IsSane(quaternion q, string msg)
+        {
+            IsSane(q.value.w, msg);
+            IsSane(q.value.x, msg);
+            IsSane(q.value.y, msg);
+            IsSane(q.value.z, msg);
+        }
     }
 }
